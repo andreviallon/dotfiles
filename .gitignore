@@ -1,5 +1,8 @@
 .DS_Store
 
+// Tmux
+tmux/plugins/
+
 // Zed
 zed/conversations/
 zed/embeddings/
