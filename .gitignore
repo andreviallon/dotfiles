@@ -2,6 +2,7 @@
 
 // Tmux
 tmux/plugins/
+*.log
 
 // Zed
 zed/conversations/
