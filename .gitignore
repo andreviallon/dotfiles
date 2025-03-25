@@ -1,5 +1,8 @@
 .DS_Store
 
+// Raycast
+raycast/
+
 // Tmux
 tmux/plugins/
 *.log
@@ -8,3 +11,7 @@ tmux/plugins/
 zed/conversations/
 zed/embeddings/
 zed/prompts/
+
+// Work
+AWS VPN Client/
+AWSVPNClient/
