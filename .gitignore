@@ -12,6 +12,11 @@ zed/conversations/
 zed/embeddings/
 zed/prompts/
 
+// Zsh
+.zcompdump*
+.zprofile
+.zsh_history
+
 // Work
 AWS VPN Client/
 AWSVPNClient/
