@@ -132,7 +132,7 @@ return {
     },
     keys = {
       {
-        '<leader>ac',
+        '<leader>cc',
         '<cmd>CodeCompanionActions<cr>',
         mode = { 'n', 'v' },
         desc = 'Open CodeCompanion Actions',
