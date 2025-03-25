@@ -7,13 +7,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh/site-functions
 
 export PATH="/Users/andreviallon/.volta/bin:$PATH"
 
@@ -45,4 +46,8 @@ function nvims() {
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/andreviallon/.lmstudio/bin"
 
-eval "$(fzf --zsh)"
+eval "$(fzf --zsh)"eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+export PATH="$HOME/.fzf/bin:$PATH"
