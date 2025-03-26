@@ -78,6 +78,10 @@ else
   vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 
   -- Window
+  vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
   vim.keymap.set('n', '<leader>sh', ':split<Return>', { desc = 'Split window below', noremap = true, silent = true })
   vim.keymap.set('n', '<leader>ss', ':vsplit<Return>', { desc = 'Split window right', noremap = true, silent = true })
   vim.keymap.set('n', '<C-w><left>', '15<C-w><', { desc = 'Resize window left', noremap = true, silent = true })

@@ -1,0 +1,61 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="file:/Users/andreviallon/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode}#[bg=#1E1E2F] {tabs}"
+                format_center ""
+                format_right  "{swap_layout}#[bg=#1E1E2F,fg=#494d64] #[bg=#1E1E2F,fg=#CBD6F7] {session}"
+                format_space  "#[bg=#1E1E2F]"
+                format_hide_on_overlength "true"
+                format_precedence "crl"
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "true"
+
+                mode_normal        "#[bg=#1E1E2F,fg=#a6da95,bold]#[bg=#a6da95,fg=#1E1E2F,bold]Normal#[bg=#1E1E2F,fg=#a6da95]"
+                mode_locked        "#[bg=#1E1E2F,fg=#6e738d,bold]#[bg=#6e738d,fg=#1E1E2F,bold]Locked#[bg=#1E1E2F,fg=#6e738d]"
+                mode_resize        "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Resize#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_pane          "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Pane#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_tab           "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Tab#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_scroll        "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Scroll#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_enter_search  "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Ent Search#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_search        "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Search Arch#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_rename_tab    "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Rename Tab#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_rename_pane   "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Rename Pane#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_session       "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Session#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_move          "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Move#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_prompt        "#[bg=#1E1E2F,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#1E1E2F,bold]Promt#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_tmux          "#[bg=#1E1E2F,fg=#f5a97f,bold]#[bg=#f5a97f,fg=#1E1E2F,bold]Tmux#[bg=#1E1E2F,fg=#f5a97f]"
+
+                // formatting for inactive tabs
+                tab_normal              "#[bg=#1E1E2F,fg=#8bd5ca]#[bg=#8bd5ca,fg=#313245,bold]{index} #[bg=#363a4f,fg=#8bd5ca,bold] {name}{floating_indicator}#[bg=#1E1E2F,fg=#363a4f,bold]"
+                tab_normal_fullscreen   "#[bg=#1E1E2F,fg=#8bd5ca]#[bg=#8bd5ca,fg=#313245,bold]{index} #[bg=#363a4f,fg=#8bd5ca,bold] {name}{fullscreen_indicator}#[bg=#1E1E2F,fg=#363a4f,bold]"
+                tab_normal_sync         "#[bg=#1E1E2F,fg=#8bd5ca]#[bg=#8bd5ca,fg=#313245,bold]{index} #[bg=#363a4f,fg=#8bd5ca,bold] {name}{sync_indicator}#[bg=#1E1E2F,fg=#363a4f,bold]"
+
+                // formatting for the current active tab
+                tab_active              "#[bg=#1E1E2F,fg=#eed49f]#[bg=#eed49f,fg=#313245,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{floating_indicator}#[bg=#1E1E2F,fg=#363a4f,bold]"
+                tab_active_fullscreen   "#[bg=#1E1E2F,fg=#eed49f]#[bg=#eed49f,fg=#313245,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{fullscreen_indicator}#[bg=#1E1E2F,fg=#363a4f,bold]"
+                tab_active_sync         "#[bg=#1E1E2F,fg=#eed49f]#[bg=#eed49f,fg=#313245,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{sync_indicator}#[bg=#1E1E2F,fg=#363a4f,bold]"
+
+                // separator between the tabs
+                tab_separator           "#[bg=#1E1E2F] "
+
+                // indicators
+                tab_sync_indicator       " "
+                tab_fullscreen_indicator " 󰊓"
+                tab_floating_indicator   " 󰹙"
+
+                command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+                command_git_branch_format      "#[fg=blue] {stdout} "
+                command_git_branch_interval    "10"
+                command_git_branch_rendermode  "static"
+            }
+        }
+        children
+    }
+}
+
