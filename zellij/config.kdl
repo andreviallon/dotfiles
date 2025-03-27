@@ -260,24 +260,7 @@ theme "catppuccin-mocha"
 // Default: normal
 // 
 default_mode "locked"
- 
-// Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
-// 
-// default_shell "fish"
- 
-// Choose the path to override cwd that zellij will use for opening new panes
-// 
-// default_cwd "/tmp"
- 
-// The name of the default layout to load on startup
-// Default: "default"
-// 
 default_layout "default"
- 
-// The folder in which Zellij will look for layouts
-// (Requires restart)
-// 
 layout_dir "/Users/andreviallon/.config/zellij/layouts"
  
 // The folder in which Zellij will look for themes
