@@ -156,6 +156,29 @@ run = "move-node-to-workspace Q"
 if.app-id = "com.brave.Browser"
 run = "move-node-to-workspace Q"
 
+# Picture in picture
+[[on-window-detected]]
+if.app-id = "org.mozilla.firefox"
+if.window-title-regex-substring = "Picture-in-Picture"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "org.mozilla.com.zen.browser"
+if.window-title-regex-substring = "Picture-in-Picture"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "com.google.Chrome"
+if.window-title-regex-substring = "Picture in Picture"
+run = "layout floating"
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = "com.brave.Browser"
+if.window-title-regex-substring = "Picture in Picture"
+run = "layout floating"
+check-further-callbacks = true
+
 # Editors
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
