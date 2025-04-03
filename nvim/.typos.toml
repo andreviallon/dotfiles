@@ -1,5 +1,0 @@
-[default.extend-words]
-teh = "teh"  # Allow "teh" without correction
-recive = "receive"  # Custom correction
-noice = "noice"
-

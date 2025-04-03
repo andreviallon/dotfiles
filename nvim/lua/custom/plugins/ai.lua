@@ -48,105 +48,12 @@ return {
     },
   },
 
-  -- Codecompanion
-  {
-    'olimorris/codecompanion.nvim',
-    event = 'VeryLazy',
-    version = false,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',
-      'MunifTanjim/nui.nvim',
-      'nvim-tree/nvim-web-devicons',
-      'zbirenbaum/copilot.lua',
-      'echasnovski/mini.diff',
-      {
-        'HakonHarnes/img-clip.nvim',
-        event = 'VeryLazy',
-        opts = {
-          default = {
-            drag_and_drop = { insert_mode = true },
-          },
-        },
-      },
-      {
-        'MeanderingProgrammer/render-markdown.nvim',
-        ft = { 'markdown', 'codecompanion' },
-      },
-    },
-    opts = {
-      strategies = {
-        chat = {
-          adapter = 'openai',
-          slash_commands = {
-            ['file'] = {
-              callback = 'strategies.chat.slash_commands.file',
-              description = 'Select a file using Telescope',
-              opts = {
-                provider = 'fzf_lua',
-                contains_code = true,
-              },
-            },
-          },
-        },
-        inline = {
-          keymaps = {
-            accept_change = {
-              modes = { n = 'ga' },
-              description = 'Accept the suggested change',
-            },
-            reject_change = {
-              modes = { n = 'gr' },
-              description = 'Reject the suggested change',
-            },
-          },
-        },
-      },
-      display = {
-        chat = {
-          intro_message = 'Welcome to CodeCompanion ✨! Press ? for options',
-          show_header_separator = true,
-          separator = '─',
-          show_references = true,
-          show_settings = true,
-          show_token_count = true,
-          start_in_insert_mode = false,
-        },
-        diff = {
-          enabled = true,
-          close_chat_at = 240,
-          layout = 'vertical',
-          opts = {
-            'internal',
-            'filler',
-            'closeoff',
-            'algorithm:patience',
-            'followwrap',
-            'linematch:120',
-          },
-          provider = 'mini_diff',
-        },
-      },
-      hints = { enabled = true },
-      log_level = 'INFO',
-    },
-    keys = {
-      {
-        '<leader>cc',
-        '<cmd>CodeCompanionActions<cr>',
-        mode = { 'n', 'v' },
-        desc = 'Open CodeCompanion Actions',
-      },
-    },
-  },
-
   -- Copilot
   {
     'github/copilot.vim',
     dependencies = { 'catppuccin/nvim' },
     event = 'VimEnter',
     lazy = true,
-
     {
       'CopilotC-Nvim/CopilotChat.nvim',
       dependencies = {

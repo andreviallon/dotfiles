@@ -1,34 +1,34 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-keymap("n", "<Space>", "", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+keymap('n', '<Space>', '', opts)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append 'unnamedplus'
 
 keymap('n', '<Esc>', ':noh<CR><Esc>', opts)
 
 -- Yank to system clipboard
-keymap({ "n", "v" }, "<leader>y", '"+y', opts)
+keymap({ 'n', 'v' }, '<leader>y', '"+y', opts)
 
 -- Paste from system clipboard
-keymap({ "n", "v" }, "<leader>p", '"+p', opts)
+keymap({ 'n', 'v' }, '<leader>p', '"+p', opts)
 
 -- Paste preserves primal yanked piece
-keymap("v", "p", '"_dP', opts)
+keymap('v', 'p', '"_dP', opts)
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight_yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank({ timeout = 200 })
+    vim.highlight.on_yank { timeout = 200 }
   end,
 })
 
 -- Indent
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap('v', '<', '<gv', opts)
+keymap('v', '>', '>gv', opts)
 
 -- Window navigation
 keymap('n', '<C-h>', '<Cmd>call VSCodeNotify("workbench.action.navigateLeft")<CR>', opts)
@@ -37,8 +37,8 @@ keymap('n', '<C-k>', '<Cmd>call VSCodeNotify("workbench.action.navigateUp")<CR>'
 keymap('n', '<C-j>', '<Cmd>call VSCodeNotify("workbench.action.navigateDown")<CR>', opts)
 
 -- Window splitting
-keymap('n', '<leader>sh', '<Cmd>call VSCodeNotify("workbench.action.splitEditor")<CR>', opts)
-keymap('n', '<leader>sv', '<Cmd>call VSCodeNotify("workbench.action.splitEditorDown")<CR>', opts)
+keymap('n', '<leader>ss', '<Cmd>call VSCodeNotify("workbench.action.splitEditor")<CR>', opts)
+keymap('n', '<leader>sS', '<Cmd>call VSCodeNotify("workbench.action.splitEditorDown")<CR>', opts)
 
 -- Navigation
 keymap('n', '<leader><Space>', '<Cmd>call VSCodeNotify("workbench.action.quickOpen")<CR>', opts)
@@ -61,7 +61,7 @@ keymap('v', '<C-j>', '<Cmd>call VSCodeNotify("editor.action.moveLinesDownAction"
 keymap('v', '<C-k>', '<Cmd>call VSCodeNotify("editor.action.moveLinesUpAction")<CR>', opts)
 
 -- Buffer navigation
-keymap('n', '<leader>bo', '<Cmd>call VSCodeNotify("workbench.action.closeOtherEditors")<CR>', opts)  -- Added this line
+keymap('n', '<leader>bo', '<Cmd>call VSCodeNotify("workbench.action.closeOtherEditors")<CR>', opts)
 keymap('n', '<leader>bd', '<Cmd>call VSCodeNotify("workbench.action.closeActiveEditor")<CR>', opts)
 keymap('n', 'H', '<Cmd>call VSCodeNotify("workbench.action.previousEditor")<CR>', opts)
 keymap('n', 'L', '<Cmd>call VSCodeNotify("workbench.action.nextEditor")<CR>', opts)
@@ -75,26 +75,30 @@ keymap('n', 'gi', '<Cmd>call VSCodeNotify("editor.action.goToImplementation")<CR
 -- Git
 keymap('n', '[c', '<Cmd>call VSCodeNotify("editor.action.dirtydiff.previous")<CR>', opts)
 keymap('n', ']c', '<Cmd>call VSCodeNotify("editor.action.dirtydiff.next")<CR>', opts)
-keymap('n', '<leader>jg', '<Cmd>call VSCodeNotify("workbench.action.terminal.new")<CR><Cmd>call VSCodeNotify("workbench.action.terminal.sendSequence", {"text": "lazygit\\u000D"})<CR>', opts)
-keymap('n', '<leader>gg', '<Cmd>call VSCodeNotify("workbench.action.createTerminalEditor")<CR><Cmd>call VSCodeNotify("workbench.action.terminal.sendSequence", {"text": "lazygit\\u000D"})<CR>', opts)
-keymap('n', '<leader>gf', '<Cmd>call VSCodeNotify("git.fetch")<CR>', opts)
-keymap('n', '<leader>gp', '<Cmd>call VSCodeNotify("git.pull")<CR>', opts)
-keymap('n', '<leader>gP', '<Cmd>call VSCodeNotify("git.push")<CR>', opts)
+keymap(
+  'n',
+  '<leader>gG',
+  '<Cmd>call VSCodeNotify("workbench.action.terminal.new")<CR><Cmd>call VSCodeNotify("workbench.action.terminal.sendSequence", {"text": "lazygit\\u000D"})<CR>',
+  opts
+)
+keymap(
+  'n',
+  '<leader>gg',
+  '<Cmd>call VSCodeNotify("workbench.action.createTerminalEditor")<CR><Cmd>call VSCodeNotify("workbench.action.terminal.sendSequence", {"text": "lazygit\\u000D"})<CR>',
+  opts
+)
 keymap('n', '<leader>ga', '<Cmd>call VSCodeNotify("git.stage")<CR>', opts)
 keymap('n', '<leader>gA', '<Cmd>call VSCodeNotify("git.stageAll")<CR>', opts)
 keymap('n', '<leader>gu', '<Cmd>call VSCodeNotify("git.unstage")<CR>', opts)
 keymap('n', '<leader>gU', '<Cmd>call VSCodeNotify("git.unstageAll")<CR>', opts)
 keymap('n', '<leader>gs', '<Cmd>call VSCodeNotify("git.stageSelectedRanges")<CR>', opts)
-keymap('v', '<leader>gs', '<Cmd>call VSCodeNotify("git.stageSelectedRanges")<CR>', opts)
 keymap('n', '<leader>gS', '<Cmd>call VSCodeNotify("git.unstageSelectedRanges")<CR>', opts)
+keymap('v', '<leader>gs', '<Cmd>call VSCodeNotify("git.stageSelectedRanges")<CR>', opts)
 keymap('v', '<leader>gS', '<Cmd>call VSCodeNotify("git.unstageSelectedRanges")<CR>', opts)
 keymap('n', '<leader>gd', '<Cmd>call VSCodeNotify("editor.action.dirtydiff.next")<CR>', opts)
 keymap('n', '<leader>gD', '<Cmd>call VSCodeNotify("git.openChange")<CR>', opts)
-keymap('v', '<leader>gr', '<Cmd>call VSCodeNotify("git.revertSelectedRanges")<CR>', opts)
 keymap('n', '<leader>gr', '<Cmd>call VSCodeNotify("git.revertSelectedRanges")<CR>', opts)
 keymap('n', '<leader>gR', '<Cmd>call VSCodeNotify("git.revertChange")<CR>', opts)
-keymap('n', '<leader>gb', '<Cmd>call VSCodeNotify("git.checkout")<CR>', opts)
-keymap('n', '<leader>gm', '<Cmd>call VSCodeNotify("git.merge")<CR>', opts)
 keymap('n', '<leader>gl', '<Cmd>call VSCodeNotify("gitlens.toggleFileBlame")<CR>', opts)
 keymap('n', '<leader>gh', '<Cmd>call VSCodeNotify("gitlens.showQuickFileHistory")<CR>', opts)
 
@@ -106,3 +110,8 @@ keymap('n', ']d', '<Cmd>call VSCodeNotify("editor.action.marker.next")<CR>', opt
 -- Tests
 keymap('n', '<leader>tT', '<Cmd>call VSCodeNotify("extension.runJestFile")<CR>', opts)
 keymap('n', '<leader>tt', '<Cmd>call VSCodeNotify("extension.runJest")<CR>', opts)
+keymap('n', '<leader>tr', '<Cmd>call VSCodeNotify("extension.runPrevJest")<CR>', opts)
+
+-- Fold
+keymap('n', '<leader>zf', '<Cmd>call VSCodeNotify("editor.fold")<CR>', opts)
+keymap('n', '<leader>zF', '<Cmd>call VSCodeNotify("editor.unfold")<CR>', opts)

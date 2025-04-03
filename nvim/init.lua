@@ -26,6 +26,15 @@ else
   vim.opt.ignorecase = true
   vim.opt.smartcase = true
 
+  -- Highlight when yanking text
+  vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+      vim.highlight.on_yank()
+    end,
+  })
+
   -- Sync clipboard between OS and Neovim.
   vim.schedule(function()
     vim.opt.clipboard = 'unnamedplus'
@@ -45,16 +54,6 @@ else
   vim.keymap.set('n', '<leader>uD', function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
   end, { silent = true, noremap = true })
-  vim.diagnostic.config {
-    virtual_text = {
-      severity = { min = vim.diagnostic.severity.ERROR },
-    },
-    underline = {
-      severity = { min = vim.diagnostic.severity.WARN },
-    },
-    signs = true,
-    update_in_insert = false,
-  }
   vim.keymap.set('n', '<leader>dE', function()
     local diagnostics = vim.diagnostic.get(0)
     if #diagnostics == 0 then
@@ -78,10 +77,6 @@ else
   vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 
   -- Window
-  vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
-  vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
-  vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
-  vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
   vim.keymap.set('n', '<leader>sh', ':split<Return>', { desc = 'Split window below', noremap = true, silent = true })
   vim.keymap.set('n', '<leader>ss', ':vsplit<Return>', { desc = 'Split window right', noremap = true, silent = true })
   vim.keymap.set('n', '<C-w><left>', '15<C-w><', { desc = 'Resize window left', noremap = true, silent = true })
@@ -92,21 +87,6 @@ else
     local bufnr = vim.api.nvim_get_current_buf()
     vim.api.nvim_buf_delete(bufnr, { force = true })
   end, { noremap = true, silent = true, desc = 'Close window and buffer' })
-
-  -- Buffer
-  vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd# <CR>', { desc = 'Delete other buffers' })
-  vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
-  vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
-  vim.keymap.set('n', '<leader>bd', ':bd|e# <CR>', { desc = 'Delete buffer' })
-  vim.keymap.set('n', '<leader>bD', '<Cmd>:bw!<CR>', { desc = 'Delete buffer force', noremap = true, silent = true })
-  vim.keymap.set('n', '<leader>bo', function()
-    local bufnr = vim.api.nvim_get_current_buf()
-    for _, b in ipairs(vim.api.nvim_list_bufs()) do
-      if b ~= bufnr and vim.api.nvim_buf_is_loaded(b) then
-        vim.api.nvim_buf_delete(b, {})
-      end
-    end
-  end, { desc = 'Close other buffers' })
 
   -- Snippets
   vim.keymap.set('i', '<C-l>', function()
@@ -128,11 +108,8 @@ else
 
   require('lazy').setup {
     install = { colorscheme = { 'catppuccin' } },
-    -- require 'kickstart.plugins.debug',
-    require 'kickstart.plugins.indent_line',
     require 'kickstart.plugins.lint',
     require 'kickstart.plugins.autopairs',
-    -- require 'kickstart.plugins.neo-tree',
     require 'kickstart.plugins.gitsigns',
     { import = 'custom.plugins' },
   }

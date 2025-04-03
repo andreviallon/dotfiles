@@ -4,11 +4,14 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    bigfile = { enabled = true },
+    bufdelete = { enabled = true },
     dashboard = { enabled = true },
     explorer = { enabled = true },
     git = { enabled = true },
     lazygit = { enabled = true },
     gitbrowse = { enabled = true },
+    indent = { enabled = true, animate = { enabled = false } },
     picker = {
       enabled = true,
       formatters = {
@@ -18,6 +21,7 @@ return {
       },
       sources = {
         explorer = {
+          title = '',
           layout = {
             layout = {
               width = 50,
@@ -43,12 +47,13 @@ return {
         end
       end,
       desc = "Search by File Type" },
- 
+
     -- Buffers
+    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete buffer" },
     { "<leader>bb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>.", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<C-b>", function() Snacks.picker.buffers() end, desc = "Buffers" },
- 
+
     -- Files & Search
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
@@ -83,7 +88,7 @@ return {
     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
     { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
     { "gt", function() snacks.picker.lsp_type_definitions() end, desc = "goto type definition" },
- 
+
     -- Notifier
     { "<leader>nd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
 
