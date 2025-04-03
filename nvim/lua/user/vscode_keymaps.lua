@@ -63,6 +63,8 @@ keymap('v', '<C-k>', '<Cmd>call VSCodeNotify("editor.action.moveLinesUpAction")<
 -- Buffer navigation
 keymap('n', '<leader>bo', '<Cmd>call VSCodeNotify("workbench.action.closeOtherEditors")<CR>', opts)
 keymap('n', '<leader>bd', '<Cmd>call VSCodeNotify("workbench.action.closeActiveEditor")<CR>', opts)
+keymap('n', '<leader>bp', '<Cmd>call VSCodeNotify("workbench.action.pinEditor")<CR>', opts)
+keymap('n', '<leader>bP', '<Cmd>call VSCodeNotify("workbench.action.unpinEditor")<CR>', opts)
 keymap('n', 'H', '<Cmd>call VSCodeNotify("workbench.action.previousEditor")<CR>', opts)
 keymap('n', 'L', '<Cmd>call VSCodeNotify("workbench.action.nextEditor")<CR>', opts)
 
@@ -99,13 +101,13 @@ keymap('n', '<leader>gd', '<Cmd>call VSCodeNotify("editor.action.dirtydiff.next"
 keymap('n', '<leader>gD', '<Cmd>call VSCodeNotify("git.openChange")<CR>', opts)
 keymap('n', '<leader>gr', '<Cmd>call VSCodeNotify("git.revertSelectedRanges")<CR>', opts)
 keymap('n', '<leader>gR', '<Cmd>call VSCodeNotify("git.revertChange")<CR>', opts)
-keymap('n', '<leader>gl', '<Cmd>call VSCodeNotify("gitlens.toggleFileBlame")<CR>', opts)
-keymap('n', '<leader>gh', '<Cmd>call VSCodeNotify("gitlens.showQuickFileHistory")<CR>', opts)
+keymap('n', '<leader>gb', '<Cmd>call VSCodeNotify("gitlens.toggleFileBlame")<CR>', opts)
 
 -- Diagnostics
 keymap('n', '<leader>dd', '<Cmd>call VSCodeNotify("workbench.actions.view.problems")<CR>', opts)
 keymap('n', '[d', '<Cmd>call VSCodeNotify("editor.action.marker.prev")<CR>', opts)
 keymap('n', ']d', '<Cmd>call VSCodeNotify("editor.action.marker.next")<CR>', opts)
+keymap('n', '<leader>de', '<Cmd>call VSCodeNotify("editor.action.marker.next")<CR>', opts)
 
 -- Tests
 keymap('n', '<leader>tT', '<Cmd>call VSCodeNotify("extension.runJestFile")<CR>', opts)
@@ -115,3 +117,10 @@ keymap('n', '<leader>tr', '<Cmd>call VSCodeNotify("extension.runPrevJest")<CR>',
 -- Fold
 keymap('n', '<leader>zf', '<Cmd>call VSCodeNotify("editor.fold")<CR>', opts)
 keymap('n', '<leader>zF', '<Cmd>call VSCodeNotify("editor.unfold")<CR>', opts)
+
+-- Bottom panel
+keymap('n', '<leader>jh', '<Cmd>call VSCodeNotify("gitlens.openFileHistory")<CR>', opts)
+keymap('n', '<leader>jt', '<Cmd>call VSCodeNotify("workbench.action.terminal.toggleTerminal")<CR>', opts)
+keymap('n', '<leader>jo', '<Cmd>call VSCodeNotify("workbench.action.output.toggleOutput")<CR>', opts)
+keymap('n', '<leader>jd', '<Cmd>call VSCodeNotify("workbench.actions.view.problems")<CR>', opts)
+
