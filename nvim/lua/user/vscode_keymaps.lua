@@ -119,7 +119,7 @@ keymap('n', '<leader>zf', '<Cmd>call VSCodeNotify("editor.fold")<CR>', opts)
 keymap('n', '<leader>zF', '<Cmd>call VSCodeNotify("editor.unfold")<CR>', opts)
 
 -- Bottom panel
-keymap('n', '<leader>jh', '<Cmd>call VSCodeNotify("gitlens.openFileHistory")<CR>', opts)
+keymap('n', '<leader>jg', '<Cmd>call VSCodeNotify("gitlens.openFileHistory")<CR>', opts)
 keymap('n', '<leader>jt', '<Cmd>call VSCodeNotify("workbench.action.terminal.toggleTerminal")<CR>', opts)
 keymap('n', '<leader>jo', '<Cmd>call VSCodeNotify("workbench.action.output.toggleOutput")<CR>', opts)
 keymap('n', '<leader>jd', '<Cmd>call VSCodeNotify("workbench.actions.view.problems")<CR>', opts)
