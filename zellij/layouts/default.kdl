@@ -4,7 +4,7 @@ layout {
             plugin location="file:/Users/andreviallon/.config/zellij/plugins/zjstatus.wasm" {
                 format_left   "{mode}#[bg=#1E1E2F] {tabs}"
                 format_center ""
-                format_right  "{swap_layout}#[bg=#1E1E2F,fg=#494d64] #[bg=#3E1E2F,fg=#B0E7A8]#[bg=#B0E7A8,fg=#000000] #[bg=#363a4f,fg=#CBD6F7] {session}#[bg=#1E1E2F,fg=#363a4f]"
+                format_right  "#[bg=#1E1E2F,fg=#494d64] #[bg=#3E1E2F,fg=#B0E7A8]#[bg=#B0E7A8,fg=#000000] #[bg=#363a4f,fg=#CBD6F7] {session}#[bg=#1E1E2F,fg=#363a4f]"
                 format_space  "#[bg=#1E1E2F]"
                 format_hide_on_overlength "true"
                 format_precedence "crl"
