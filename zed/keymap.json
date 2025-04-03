@@ -23,6 +23,12 @@
       "a": "git::Uncommit"
     }
   },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-d": "pane::SplitRight"
+    }
+  },
   // Project Tree
   {
     "context": "ProjectPanel && not_editing",
