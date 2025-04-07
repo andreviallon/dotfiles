@@ -6,10 +6,10 @@ return {
     lazy = true,
     version = false,
     opts = {
+      file_selector = 'snacks',
       provider = 'openai',
       hints = { enabled = false },
       openai = {
-        endpoint = 'https://api.openai.com/v1',
         model = 'gpt-4o',
         timeout = 30000,
         temperature = 0,
@@ -22,8 +22,6 @@ return {
       'stevearc/dressing.nvim',
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
-      'hrsh7th/nvim-cmp',
-      'ibhagwan/fzf-lua',
       'nvim-tree/nvim-web-devicons',
       {
         'HakonHarnes/img-clip.nvim',

@@ -1,5 +1,6 @@
 return {
   'vim-test/vim-test',
+  lazy = true,
   dependencies = {
     'preservim/vimux',
   },

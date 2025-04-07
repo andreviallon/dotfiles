@@ -1,9 +1,26 @@
 return {
   'catppuccin/nvim',
-  lazy = false,
   name = 'catppuccin',
-  opts = { colorscheme = 'mocha' },
-  init = function()
-    vim.cmd.colorscheme 'catppuccin-mocha'
+  priority = 1000,
+  config = function()
+    require('catppuccin').setup {
+      color_overrides = {
+        latte = {
+          pink = '#1E66F5',
+        },
+      },
+      integrations = {
+
+        blink_cmp = true,
+        mason = true,
+        snacks = {
+          enabled = true,
+        },
+        lsp_trouble = true,
+        which_key = true,
+      },
+    }
+
+    vim.cmd.colorscheme 'catppuccin'
   end,
 }

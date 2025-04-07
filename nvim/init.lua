@@ -95,6 +95,17 @@ else
     vim.api.nvim_put({ line }, 'l', true, true)
   end, { desc = 'Insert console.log with label', noremap = true, silent = true })
 
+  local chdir = vim.api.nvim_create_augroup('chdir', {})
+  vim.api.nvim_create_autocmd('BufEnter', {
+    group = chdir,
+    nested = true,
+    callback = function()
+      if vim.bo.filetype == 'Avante' then
+        vim.cmd 'lcd %:p:h'
+      end
+    end,
+  })
+
   -- Lazyvim
   local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
   if not (vim.uv or vim.loop).fs_stat(lazypath) then
