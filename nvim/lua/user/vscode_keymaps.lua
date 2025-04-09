@@ -62,6 +62,8 @@ keymap('v', '<C-k>', '<Cmd>call VSCodeNotify("editor.action.moveLinesUpAction")<
 
 -- Buffer navigation
 keymap('n', '<leader>bo', '<Cmd>call VSCodeNotify("workbench.action.closeOtherEditors")<CR>', opts)
+keymap('n', '<leader>br', '<Cmd>call VSCodeNotify("workbench.action.closeEditorsToTheRight")<CR>', opts)
+keymap('n', '<leader>bl', '<Cmd>call VSCodeNotify("workbench.action.closeEditorsToTheLeft")<CR>', opts)
 keymap('n', '<leader>bd', '<Cmd>call VSCodeNotify("workbench.action.closeActiveEditor")<CR>', opts)
 keymap('n', '<leader>bp', '<Cmd>call VSCodeNotify("workbench.action.pinEditor")<CR>', opts)
 keymap('n', '<leader>bP', '<Cmd>call VSCodeNotify("workbench.action.unpinEditor")<CR>', opts)

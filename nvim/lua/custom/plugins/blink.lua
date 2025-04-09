@@ -5,7 +5,6 @@ return {
     opts = {
       keymap = {
         preset = 'enter',
-        ['<Tab>'] = { 'accept' },
         ['<C-k>'] = { 'select_prev', 'fallback' },
         ['<C-j>'] = { 'select_next', 'fallback' },
       },
@@ -17,9 +16,7 @@ return {
         accept = { auto_brackets = { enabled = true } },
         documentation = {
           auto_show = true,
-          auto_show_delay_ms = 250,
           treesitter_highlighting = true,
-          window = { border = 'rounded' },
         },
         list = {
           selection = {
@@ -31,18 +28,12 @@ return {
             end,
           },
         },
-        menu = {
-          border = 'rounded',
-        },
       },
       sources = {
         default = { 'lsp', 'buffer', 'path' },
       },
       signature = {
         enabled = true,
-        window = {
-          border = 'rounded',
-        },
       },
     },
     opts_extend = { 'sources.default' },

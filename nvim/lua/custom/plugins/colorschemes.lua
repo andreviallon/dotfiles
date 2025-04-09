@@ -10,8 +10,8 @@ return {
         },
       },
       integrations = {
-
         blink_cmp = true,
+        cmp = true,
         mason = true,
         snacks = {
           enabled = true,
