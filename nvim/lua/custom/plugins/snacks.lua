@@ -12,6 +12,8 @@ return {
     lazygit = { enabled = true },
     gitbrowse = { enabled = true },
     indent = { enabled = true, animate = { enabled = false } },
+    notifier = { enabled = true },
+    notify = { enabled = true },
     picker = {
       enabled = true,
       formatters = {
@@ -90,7 +92,14 @@ return {
     { "gt", function() snacks.picker.lsp_type_definitions() end, desc = "goto type definition" },
 
     -- Notifier
-    { "<leader>nd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+    { "<leader>n", function()
+      if Snacks.config.picker and Snacks.config.picker.enabled then
+        Snacks.picker.notifications()
+      else
+        Snacks.notifier.show_history()
+      end
+    end, desc = "Notification History" },
+    { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
 
     -- UI
     { "<leader>uc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
