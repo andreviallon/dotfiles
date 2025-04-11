@@ -54,23 +54,13 @@ else
   vim.keymap.set('n', '<leader>uD', function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
   end, { silent = true, noremap = true })
-  vim.keymap.set('n', '<leader>dE', function()
-    local diagnostics = vim.diagnostic.get(0)
-    if #diagnostics == 0 then
-      print 'No diagnostics found'
-      return
-    end
 
-    local messages = {}
-    for _, diag in ipairs(diagnostics) do
-      table.insert(messages, diag.message)
-    end
-
-    local output = table.concat(messages, '\n')
-
-    vim.fn.setreg('+', output)
-    print 'Diagnostics copied to clipboard!'
-  end, { desc = 'Copy Diagnostics' })
+  vim.diagnostic.config {
+    severity_sort = true,
+    virtual_text = {
+      severity = vim.diagnostic.severity.ERROR,
+    },
+  }
 
   -- Move lines up and down
   vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
