@@ -1,0 +1,49 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="file:/Users/andreviallon/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode}#[bg=#1E1E2F] {tabs}"
+                format_center ""
+                format_right  "#[bg=#1E1E2F,fg=#494d64] #[bg=#3E1E2F,fg=#B0E7A8]#[bg=#B0E7A8,fg=#000000] #[bg=#363a4f,fg=#CBD6F7] {session}#[bg=#1E1E2F,fg=#363a4f]"
+                format_space  "#[bg=#1E1E2F]"
+                format_hide_on_overlength "true"
+                format_precedence "crl"
+
+                mode_normal        "#[bg=#1E1E2F,fg=#a6da95]#[bg=#a6da95,fg=#1E1E2F,bold]NORNAL#[bg=#1E1E2F,fg=#a6da95]"
+                mode_locked        "#[bg=#1E1E2F,fg=#363a4f]#[bg=#363a4f,fg=#C8D6FA,bold]LOCKED#[bg=#1E1E2F,fg=#363a4f]"
+                mode_resize        "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]RESIZE#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_pane          "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]PANE#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_tab           "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]TAB#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_scroll        "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]SCROLL#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_enter_search  "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]ENT SEARCH#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_search        "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]SEARCH#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_rename_tab    "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]RENAME TAB#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_rename_pane   "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]RENAME PANE#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_session       "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]SESSION#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_move          "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]MOVE#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_prompt        "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#1E1E2F,bold]PROMT#[bg=#1E1E2F,fg=#8aadf4]"
+                mode_tmux          "#[bg=#1E1E2F,fg=#f5a97f]#[bg=#f5a97f,fg=#1E1E2F,bold]TMUX#[bg=#1E1E2F,fg=#f5a97f]"
+
+                // formatting for inactive tabs
+                tab_normal              "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#313245,bold]{index} #[bg=#363a4f,fg=#8aadf4,bold] {name}{floating_indicator}#[bg=#1E1E2F,fg=#363a4f]"
+                tab_normal_fullscreen   "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#313245,bold]{index} #[bg=#363a4f,fg=#8aadf4,bold] {name}{fullscreen_indicator}#[bg=#1E1E2F,fg=#363a4f]"
+                tab_normal_sync         "#[bg=#1E1E2F,fg=#8aadf4]#[bg=#8aadf4,fg=#313245,bold]{index} #[bg=#363a4f,fg=#8aadf4,bold] {name}{sync_indicator}#[bg=#1E1E2F,fg=#363a4f]"
+
+                // formatting for the current active tab
+                tab_active              "#[bg=#1E1E2F,fg=#eed49f]#[bg=#eed49f,fg=#1E1E2F,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{floating_indicator}#[bg=#1E1E2F,fg=#363a4f]"
+                tab_active_fullscreen   "#[bg=#1E1E2F,fg=#eed49f]#[bg=#eed49f,fg=#1E1E2F,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{fullscreen_indicator}#[bg=#1E1E2F,fg=#363a4f]"
+                tab_active_sync         "#[bg=#1E1E2F,fg=#eed49f]#[bg=#eed49f,fg=#1E1E2F,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{sync_indicator}#[bg=#1E1E2F,fg=#363a4f]"
+
+                // separator between the tabs
+                tab_separator           "#[bg=#1E1E2F] "
+
+                // indicators
+                tab_sync_indicator       " "
+                tab_fullscreen_indicator " 󰊓"
+                tab_floating_indicator   " 󰹙"
+            }
+        }
+        children
+    }
+}
+
