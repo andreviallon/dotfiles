@@ -1,0 +1,66 @@
+{
+  "catppuccin.accentColor": "blue",
+  "catppuccin.colorOverrides": {
+    "mocha": {
+      "pink": "#89B4FA"
+    },
+    "latte": {
+      "pink": "#1E66F5"
+    }
+  },
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSurroundingLines": 15,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'MesloLGM Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "errorLens.enabledDiagnosticLevels": ["error"],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "onFocusChange",
+  "git.confirmSync": false,
+  "git.inputValidation": true,
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "jestrunner.disableCodeLens": true,
+  "scss.lint.unknownAtRules": "ignore",
+  "security.promptForLocalFileProtocolHandling": false,
+  "terminal.integrated.macOptionIsMeta": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.scrollback": 100000,
+  "terminal.integrated.suggest.quickSuggestions": true,
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+  "terminal.integrated.tabs.enabled": false,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "window.autoDetectColorScheme": true,
+  "window.confirmBeforeClose": "always",
+  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.colorCustomizations": {
+    "list.focusOutline": "#949494"
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.navigationControl.enabled": false,
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "workbench.layoutControl.enabled": false
+}
+

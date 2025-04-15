@@ -1,0 +1,123 @@
+[
+  // Global
+  {
+    "context": "Pane || Workspace || Editor || Menu || Terminal || Assistant || Dock || EmptyPane || SharedScreen || VimControl || vim_mode == normal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "alt-p": "pane::TogglePinTab"
+    }
+  },
+  // Git Panel
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "s": "git::StageAll",
+      "u": "git::UnstageAll",
+      "f": "git::Fetch",
+      "p": "git::Pull",
+      "P": "git::Push",
+      "c": "git::Commit",
+      "a": "git::Uncommit"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-d": "pane::SplitRight"
+    }
+  },
+  // Project Tree
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "d": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste"
+    }
+  },
+  // Editor
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem"
+    }
+  },
+  // Empty Pane
+  {
+    "context": "EmptyPane",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space f p": "projects::OpenRecent",
+      "space /": "pane::DeploySearch"
+    }
+  },
+  // Vim
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // Assistant
+      "space a i": "assistant::InlineAssist",
+
+      // Buffer
+      "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseInactiveItems",
+      "space .": "tab_switcher::Toggle",
+
+      // Diagnostics
+      "space d d": "diagnostics::Deploy",
+
+      // Editor
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+
+      // Files and search
+      "space space": "file_finder::Toggle",
+      "space f p": "projects::OpenRecent",
+      "space /": "pane::DeploySearch",
+      "space e": "project_panel::ToggleFocus",
+
+      // Git
+      "space g d": "editor::ToggleSelectedDiffHunks",
+      "space g r": "git::Restore",
+      "space g b": "git::Branch",
+
+      // Go to
+      "g D": "editor::GoToDefinitionSplit",
+      "g i": "editor::GoToImplementation",
+      "g I": "editor::GoToImplementationSplit",
+      "g t": "editor::GoToTypeDefinition",
+      "g T": "editor::GoToTypeDefinitionSplit",
+      "g r": "editor::FindAllReferences",
+
+      // LSP
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+
+      // Markdown
+      "space m p": "markdown::OpenPreview",
+      "space m P": "markdown::OpenPreviewToTheSide",
+
+      // Split
+      "space s j": "pane::SplitDown",
+      "space s k": "pane::SplitUp",
+      "space s l": "pane::SplitRight",
+      "space s h": "pane::SplitLeft",
+
+      // UI
+      "space u i": "editor::ToggleInlayHints",
+      "space u b": "editor::ToggleGitBlameInline",
+      "space u B": "git::Blame",
+
+      // Test
+      "space t r": "task::Rerun",
+      "space t t": "task::Spawn"
+    }
+  }
+]
