@@ -1,6 +1,6 @@
 # General
 font-family = MesloLGL Nerd Font Mono
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = catppuccin-mocha
 mouse-hide-while-typing = true
 copy-on-select = clipboard
 cursor-opacity = 0.5
