@@ -23,6 +23,8 @@ return {
       },
       sources = {
         explorer = {
+          title = '',
+          border = 'none',
           layout = {
             layout = {
               width = 50,

@@ -26,6 +26,22 @@ else
   vim.opt.ignorecase = true
   vim.opt.smartcase = true
 
+  -- Change bufferline background color
+  vim.cmd [[
+    highlight BufferLineFill guibg=#181826
+  ]]
+
+  vim.api.nvim_create_autocmd('ColorScheme', {
+    pattern = '*',
+    callback = function()
+      vim.api.nvim_set_hl(0, 'SnacksPicker', { bg = '#181826', nocombine = true })
+      vim.api.nvim_set_hl(0, 'SnacksPickerBorder', { bg = '#181826', fg = '#45475C', nocombine = true })
+    end,
+  })
+
+  -- Ensures no statusline for explorer
+  vim.opt.laststatus = 3
+
   -- Highlight when yanking text
   vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',
