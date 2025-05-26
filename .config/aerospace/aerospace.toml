@@ -1,23 +1,19 @@
-after-login-command = []
 after-startup-command = []
 start-at-login = true
-
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
-
 accordion-padding = 20
-
-default-root-container-layout = "tiles"
+default-root-container-layout = "accordion"
 default-root-container-orientation = "auto"
 key-mapping.preset = "qwerty"
 
 [gaps]
 inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
 
 [mode.main.binding]
 ctrl-alt-cmd-slash = "layout tiles horizontal vertical"
@@ -45,11 +41,12 @@ ctrl-alt-cmd-g = "workspace G"
 ctrl-alt-cmd-i = "workspace I"
 ctrl-alt-cmd-m = "workspace M"
 ctrl-alt-cmd-n = "workspace N"
-ctrl-alt-cmd-p = "workspace P"
 ctrl-alt-cmd-o = "workspace O"
+ctrl-alt-cmd-p = "workspace P"
 ctrl-alt-cmd-q = "workspace Q"
 ctrl-alt-cmd-r = "workspace R"
 ctrl-alt-cmd-s = "workspace S"
+ctrl-alt-cmd-t = "workspace T"
 ctrl-alt-cmd-u = "workspace U"
 ctrl-alt-cmd-v = "workspace V"
 ctrl-alt-cmd-w = "workspace W"
@@ -66,11 +63,12 @@ ctrl-alt-cmd-shift-g = "move-node-to-workspace G"
 ctrl-alt-cmd-shift-i = "move-node-to-workspace I"
 ctrl-alt-cmd-shift-m = "move-node-to-workspace M"
 ctrl-alt-cmd-shift-n = "move-node-to-workspace N"
-ctrl-alt-cmd-shift-p = "move-node-to-workspace P"
 ctrl-alt-cmd-shift-o = "move-node-to-workspace O"
+ctrl-alt-cmd-shift-p = "move-node-to-workspace P"
 ctrl-alt-cmd-shift-q = "move-node-to-workspace Q"
 ctrl-alt-cmd-shift-r = "move-node-to-workspace R"
 ctrl-alt-cmd-shift-s = "move-node-to-workspace S"
+ctrl-alt-cmd-shift-t = "move-node-to-workspace T"
 ctrl-alt-cmd-shift-u = "move-node-to-workspace U"
 ctrl-alt-cmd-shift-v = "move-node-to-workspace V"
 ctrl-alt-cmd-shift-w = "move-node-to-workspace W"
@@ -79,9 +77,6 @@ ctrl-alt-cmd-shift-y = "move-node-to-workspace Y"
 ctrl-alt-cmd-shift-z = "move-node-to-workspace Z"
 
 ctrl-alt-cmd-f = "fullscreen"
-
-ctrl-alt-cmd-tab = "workspace-back-and-forth"
-ctrl-alt-cmd-shift-tab = "move-workspace-to-monitor --wrap-around next"
 
 ctrl-alt-cmd-comma = "mode service"
 
@@ -96,46 +91,6 @@ ctrl-alt-cmd-j = ["join-with down", "mode main"]
 ctrl-alt-cmd-k = ["join-with up", "mode main"]
 ctrl-alt-cmd-l = ["join-with right", "mode main"]
 
-# Music
-[[on-window-detected]]
-if.app-id = "com.apple.Music"
-run = "move-node-to-workspace D"
-
-[[on-window-detected]]
-if.app-id = "com.apple.podcasts"
-run = "move-node-to-workspace D"
-
-[[on-window-detected]]
-if.app-id = "com.spotify.client"
-run = "move-node-to-workspace D"
-
-# Notes & Reminders
-[[on-window-detected]]
-if.app-id = "com.apple.Notes"
-run = "move-node-to-workspace E"
-
-[[on-window-detected]]
-if.app-id = "com.apple.reminders"
-run = "move-node-to-workspace E"
-
-[[on-window-detected]]
-if.app-id = "md.obsidian"
-run = "move-node-to-workspace E"
-
-[[on-window-detected]]
-if.app-id = "com.apple.iCal"
-run = "move-node-to-workspace E"
-
-# Mail
-[[on-window-detected]]
-if.app-id = "com.microsoft.Outlook"
-run = "move-node-to-workspace R"
-
-[[on-window-detected]]
-if.app-id = "com.apple.mail"
-run = "move-node-to-workspace R"
-
-# Browsers
 [[on-window-detected]]
 if.app-id = "com.apple.Safari"
 run = "move-node-to-workspace Q"
@@ -156,30 +111,14 @@ run = "move-node-to-workspace Q"
 if.app-id = "com.brave.Browser"
 run = "move-node-to-workspace Q"
 
-# Picture in picture
-[[on-window-detected]]
-if.app-id = "org.mozilla.firefox"
-if.window-title-regex-substring = "Picture-in-Picture"
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = "org.mozilla.com.zen.browser"
-if.window-title-regex-substring = "Picture-in-Picture"
-run = "layout floating"
-
 [[on-window-detected]]
 if.app-id = "com.google.Chrome"
-if.window-title-regex-substring = "Picture in Picture"
-run = "layout floating"
-check-further-callbacks = true
+run = "move-node-to-workspace Q"
 
 [[on-window-detected]]
-if.app-id = "com.brave.Browser"
-if.window-title-regex-substring = "Picture in Picture"
-run = "layout floating"
-check-further-callbacks = true
+if.app-id = "com.electron.cypress"
+run = "move-node-to-workspace Q"
 
-# Editors
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
 run = "move-node-to-workspace W"
@@ -196,7 +135,6 @@ run = "move-node-to-workspace W"
 if.app-id = "dev.zed.Zed"
 run = "move-node-to-workspace W"
 
-# Work
 [[on-window-detected]]
 if.app-id = "com.amazonaws.acvc.osx"
 run = "move-node-to-workspace V"
@@ -206,14 +144,84 @@ if.app-id = "com.tinyspeck.slackmacga"
 run = "move-node-to-workspace S"
 
 [[on-window-detected]]
+if.app-id = "com.apple.Notes"
+run = "move-node-to-workspace E"
+
+[[on-window-detected]]
+if.app-id = "com.apple.Reminders"
+run = "move-node-to-workspace E"
+
+[[on-window-detected]]
+if.app-id = "md.obsidian"
+run = "move-node-to-workspace E"
+
+[[on-window-detected]]
+if.app-id = "com.apple.iCal"
+run = "move-node-to-workspace R"
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.Outlook"
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = "com.apple.Calendar"
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = "com.apple.mail"
+run = "move-node-to-workspace S"
+
+[[on-window-detected]]
 if.app-id = "us.zoom.xos"
 run = "move-node-to-workspace Z"
 
 [[on-window-detected]]
-if.app-id = "com.google.Chrome"
-run = "move-node-to-workspace C"
+if.app-id = "com.apple.Music"
+run = "move-node-to-workspace D"
 
 [[on-window-detected]]
-if.app-id = "com.electron.cypress"
-run = "move-node-to-workspace C"
+if.app-id = "com.apple.podcasts"
+run = "move-node-to-workspace D"
 
+[[on-window-detected]]
+if.app-id = "com.spotify.client"
+run = "move-node-to-workspace D"
+
+# Floating windows
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "com.1password.1password"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "us.zoom.xos"
+if.window-title-regex-substring = "Zoom Meeting"
+run = "layout floating"
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = "org.mozilla.firefox"
+if.window-title-regex-substring = "Picture-in-Picture"
+run = "layout floating"
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = "org.mozilla.com.zen.browser"
+if.window-title-regex-substring = "Picture-in-Picture"
+run = "layout floating"
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = "com.google.Chrome"
+if.window-title-regex-substring = "Picture in Picture"
+run = "layout floating"
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = "com.brave.Browser"
+if.window-title-regex-substring = "Picture in Picture"
+run = "layout floating"
+check-further-callbacks = true

@@ -41,8 +41,6 @@ keymap('n', '<leader>ss', '<Cmd>call VSCodeNotify("workbench.action.splitEditor"
 keymap('n', '<leader>sS', '<Cmd>call VSCodeNotify("workbench.action.splitEditorDown")<CR>', opts)
 
 -- Navigation
-keymap('n', '<leader><Space>', '<Cmd>call VSCodeNotify("workbench.action.quickOpen")<CR>', opts)
-keymap('n', '<leader>/', '<Cmd>call VSCodeNotify("workbench.action.findInFiles")<CR>', opts)
 keymap('n', '<leader>.', '<Cmd>call VSCodeNotify("workbench.action.showAllEditors")<CR>', opts)
 
 -- Notifications
@@ -50,6 +48,11 @@ keymap('n', '<leader>nn', '<Cmd>call VSCodeNotify("notifications.showList")<CR>'
 
 -- File Explorer
 keymap('n', '<leader>e', '<Cmd>call VSCodeNotify("workbench.action.toggleSidebarVisibility")<CR>', opts)
+
+-- Search and Find
+keymap('n', '<leader><Space>', '<Cmd>call VSCodeNotify("workbench.action.quickOpen")<CR>', opts)
+keymap('n', '<leader>ff', '<Cmd>call VSCodeNotify("workbench.action.quickOpen")<CR>', opts)
+keymap('n', '<leader>/', '<Cmd>call VSCodeNotify("workbench.action.findInFiles")<CR>', opts)
 
 -- LSP
 keymap('n', 'K', '<Cmd>call VSCodeNotify("editor.action.showHover")<CR>', opts)
@@ -125,4 +128,3 @@ keymap('n', '<leader>jg', '<Cmd>call VSCodeNotify("gitlens.openFileHistory")<CR>
 keymap('n', '<leader>jt', '<Cmd>call VSCodeNotify("workbench.action.terminal.toggleTerminal")<CR>', opts)
 keymap('n', '<leader>jo', '<Cmd>call VSCodeNotify("workbench.action.output.toggleOutput")<CR>', opts)
 keymap('n', '<leader>jd', '<Cmd>call VSCodeNotify("workbench.actions.view.problems")<CR>', opts)
-

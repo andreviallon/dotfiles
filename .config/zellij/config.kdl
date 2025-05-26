@@ -8,7 +8,6 @@ keybinds clear-defaults=true {
     }
     normal {
         bind "d" { Detach; }
-        bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "x" { CloseFocus; SwitchToMode "locked"; }
         bind "c" { NewTab; SwitchToMode "locked"; }
         bind "n" { NewTab; SwitchToMode "locked"; }

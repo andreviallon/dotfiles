@@ -31,11 +31,12 @@ else
     highlight BufferLineFill guibg=#181826
   ]]
 
+  -- Change snacks picker colors
   vim.api.nvim_create_autocmd('ColorScheme', {
     pattern = '*',
     callback = function()
       vim.api.nvim_set_hl(0, 'SnacksPicker', { bg = '#181826', nocombine = true })
-      vim.api.nvim_set_hl(0, 'SnacksPickerBorder', { bg = '#181826', fg = '#45475C', nocombine = true })
+      vim.api.nvim_set_hl(0, 'SnacksPickerBorder', { bg = '#181826', fg = '#7DB6FF', nocombine = true })
     end,
   })
 

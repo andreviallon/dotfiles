@@ -3,7 +3,10 @@ return {
     'folke/lazydev.nvim',
     ft = 'lua',
   },
-  { 'jparise/vim-graphql', lazy = false },
+  {
+    'jparise/vim-graphql',
+    lazy = false,
+  },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -20,6 +23,7 @@ return {
     },
     lazy = false,
     config = function()
+      -- Set up LspAttach autocommand for keybindings and dynamic features
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -63,23 +67,40 @@ return {
         end,
       })
 
+      -- Get enhanced capabilities (e.g., from cmp-nvim)
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      require('mason').setup()
+      -- Setup Mason and Mason LSP
+      local mason = require 'mason'
+      local mason_lspconfig = require 'mason-lspconfig'
 
-      require('mason-lspconfig').setup {
-        ensure_installed = { 'eslint', 'vtsls', 'lua_ls' },
+      mason.setup()
+
+      mason_lspconfig.setup {
+        ensure_installed = { 'lua_ls', 'vtsls' },
         automatic_installation = true,
       }
 
-      require('mason-lspconfig').setup_handlers {
-        function(server_name)
+      -- Safely setup handlers
+      if mason_lspconfig.setup_handlers then
+        mason_lspconfig.setup_handlers {
+          function(server_name)
+            require('lspconfig')[server_name].setup {
+              capabilities = capabilities,
+              autostart = true,
+            }
+          end,
+        }
+      else
+        -- Fallback in case setup_handlers is not available
+        local servers = { 'lua_ls', 'vtsls' }
+        for _, server_name in ipairs(servers) do
           require('lspconfig')[server_name].setup {
             capabilities = capabilities,
             autostart = true,
           }
-        end,
-      }
+        end
+      end
     end,
   },
 }

@@ -53,3 +53,5 @@ if command -v fzf &>/dev/null; then
 fi
 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+. "$HOME/.local/bin/env"

@@ -34,10 +34,11 @@
     "context": "ProjectPanel && not_editing",
     "bindings": {
       "a": "project_panel::NewFile",
-      "d": "project_panel::NewDirectory",
+      "A": "project_panel::NewDirectory",
+      "d": "project_panel::Trash",
       "r": "project_panel::Rename",
       "x": "project_panel::Cut",
-      "c": "project_panel::Copy",
+      "y": "project_panel::Copy",
       "p": "project_panel::Paste"
     }
   },
@@ -108,6 +109,7 @@
       "space s j": "pane::SplitDown",
       "space s k": "pane::SplitUp",
       "space s l": "pane::SplitRight",
+      "space s s": "pane::SplitRight",
       "space s h": "pane::SplitLeft",
 
       // UI
