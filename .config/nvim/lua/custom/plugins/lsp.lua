@@ -81,7 +81,6 @@ return {
         automatic_installation = true,
       }
 
-      -- Safely setup handlers
       if mason_lspconfig.setup_handlers then
         mason_lspconfig.setup_handlers {
           function(server_name)
